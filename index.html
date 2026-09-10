@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Love ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 30px 20px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px #0004;
+}
+
+h1 {
+  color: #ff3366;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #ff7b9c;
+  border-radius: 12px;
+  font-size: 16px;
+  text-align: center;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 12px;
+  background: #ff3366;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.profile {
+  display: none;
+  margin-top: 25px;
+}
+
+.profile img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #ff5c8a;
+}
+
+.profile h2 {
+  color: #ff3366;
+}
+
+.not-found {
+  display: none;
+  color: red;
+  margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>My Love ❤️</h1>
+
+<p>Enter her special number 💕</p>
+
+<input type="text" id="number" placeholder="Enter number">
+
+<button onclick="search()">Search ❤️</button>
+
+<div class="profile" id="profile">
+
+<img id="photo" src="">
+
+<h2 id="name"></h2>
+
+<p>🤩💐</p>
+
+</div>
+
+<div class="not-found" id="notFound">
+No profile found 💔
+</div>
+
+</div>
+
+<script>
+
+const profiles = {
+
+"5201314": {
+name: "Trayee Madam",
+photo: "5201314.jpeg"
+}
+
+};
+
+function search() {
+
+let number = document.getElementById("number").value;
+
+if (profiles[number]) {
+
+document.getElementById("name").innerText =
+profiles[number].name;
+
+document.getElementById("photo").src =
+profiles[number].photo;
+
+document.getElementById("profile").style.display = "block";
+
+document.getElementById("notFound").style.display = "none";
+
+} else {
+
+document.getElementById("profile").style.display = "none";
+
+document.getElementById("notFound").style.display = "block";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
